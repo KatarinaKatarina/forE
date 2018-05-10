@@ -1,0 +1,33 @@
+<div ng-controller="sobeCtrl">
+
+	<div class="page-header">
+		<h1>Spisak soba</h1>
+	</div>
+
+
+
+	<div class="row">
+		<!-- TABELA -->
+
+		<div></div>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Tip Sobe</th>
+					<th>Broj kreveta</th>
+					<th>Cena po noći</th>
+
+					<th colspan=2></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in sobe">
+					<td>{{s.tip}}</td>
+					<td>{{s.brojKreveta}}</td>
+					<td>{{s.cenaNocenja}}</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

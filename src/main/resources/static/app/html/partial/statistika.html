@@ -1,0 +1,57 @@
+<div ng-controller="statistikaCtrl">
+
+	<div class="page-header">
+		<h1>Statika hotela</h1>
+	</div>
+
+	<div class="row">
+
+
+		Unesite ime klijenta: <input ng-model="imeGosta"><br> <br>
+		Unesite prezime klijenta: <input ng-model="prezimeGosta" ><br>
+		<br>
+		<br>
+		<button type="button" class="btn btn-primary" ng-click="again()">Izračunaj</button>
+
+		<br>
+		<br>
+
+		<!-- TABELA -->
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Tip Sobe</th>
+					<th>Broj kreveta</th>
+					<th>Cena po noći</th>
+					<th>Datum ulaska</th>
+					<th>Datum izlaska</th>
+					<th>Broj dana</th>
+					<th>Plaćeno</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in rezervacije">
+					<td>{{s.sobaTip}}</td>
+					<td>{{s.brojKreveta}}</td>
+					<td>{{s.cenaPoNoci}}</td>
+					<td>{{s.datumUlaskaStr}}</td>
+					<td>{{s.datumIzlaskaStr}}</td>
+					<td>{{s.brojDana}}</td>
+					<td>{{s.placeno}}</td>
+					<!-- <td>
+						<button type="button" class="btn btn-success"
+							ng-click="delete(s.id)" ng-show="true">Izbriši</button>
+						<button type="button" class="btn btn-success"
+							ng-click="plati(s.id)" ng-show="true">Plati</button>
+					</td> -->
+				</tr>
+			</tbody>
+		</table>
+
+
+		Klijent: <span>{{imeGosta}} </span><span>{{prezimeGosta}}</span> <br>
+
+		Uplaceno: {{uplaceno}} <br> Za uplatu: {{uplatiti}}
+	</div>
+</div>
+

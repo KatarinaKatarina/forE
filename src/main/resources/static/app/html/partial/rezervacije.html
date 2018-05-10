@@ -1,0 +1,92 @@
+<div ng-controller="rezervacijeCtrl">
+
+
+
+	<div class="row">
+
+
+		<div ng-show="pokaziTabelu">
+
+			<div class="page-header">
+				<h1>Rezervacija</h1>
+			</div>
+			Unesite ime: <input ng-model="novi.imeGosta" placeholder="Unesite ime"><br> <br>
+			Unesite prezime: <input ng-model="novi.prezimeGosta" placeholder="Unesite prezime"><br>
+			<br> Unesite početni datum: <input type="date"
+				ng-model="novi.datumUlaskaStr" ng-change="poziv()"> Unesite
+			krajnji datum: <input type="date" ng-model="novi.datumIzlaskaStr"
+				ng-change="poziv()"> <br> <br> <br> <br>
+
+
+			<!-- TABELA -->
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Tip Sobe</th>
+						<th>Broj kreveta</th>
+						<th>Cena po noći</th>
+
+						<th colspan=2></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="s in slobodneSobe">
+						<td>{{s.tip}}</td>
+						<td>{{s.brojKreveta}}</td>
+						<td>{{s.cenaNocenja}}</td>
+						<td>
+							<button type="button" class="btn btn-success"
+								ng-click="rezervisi(s.id)">Rezerviši</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="button" class="btn btn-success" ng-click="switchView()">Plati
+				rezervacije</button>
+
+		</div>
+		<div ng-hide="pokaziTabelu">
+			<div class="page-header">
+				<h1>Isplata</h1>
+			</div>
+
+			<!-- TABELA -->
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>Tip Sobe</th>
+						<!-- <th>Broj kreveta</th>
+						 <th>Cena po noći</th> -->
+						<th>Datum ulaska</th>
+						<th>Datum izlaska</th>
+
+						<th colspan=2></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="s in rezervacije">
+						<td>{{s.sobaTip}}</td>
+					<!-- <td>{{s.soba.brojKreveta}}</td>
+						<td>{{s.soba.cenaNocenja}}</td> -->
+						<td>{{s.datumUlaskaStr}}</td>
+						<td>{{s.datumIzlaskaStr}}</td>
+						<td>
+							<button type="button" class="btn btn-success"
+								ng-click="delete(s.id)" ng-show="true">Izbriši</button>
+								<button type="button" class="btn btn-success"
+								ng-click="plati(s.id)" >Plati</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<button type="button" class="btn btn-success" ng-click="switchView()">Vrati
+				se na rezervacije</button>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+</div>

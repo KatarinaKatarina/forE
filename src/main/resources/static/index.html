@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="./assets/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="/assets/css/theme.css" rel="stylesheet">
+<!-- <link href="./app/css/style.css" rel="stylesheet">
+ -->
+<script src="./assets/js/angular.js"></script>
+<script type="text/javascript" src="./assets/js/angular-route.js"></script>
+<script src="./app/js/main.js"></script>
+</head>
+<body>
+	<!-- Navigacioni bar -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="./#!/">Hotel Borovina</a>
+				</div>
+				
+				<ul class="nav navbar-nav">
+					<li><a href="./#!/sobe">Sobe</a></li>
+					<li><a href="./#!/rezervacije">Rezervacije</a></li>
+					<li><a href="./#!/statistika">Statistika</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+	<br>
+	<br>
+
+	<div ng-app="jwd26zavrsni16">
+		<div ng-view class="container"></div>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="./assets/js/bootstrap.js"></script>
+</body>
+</html>
